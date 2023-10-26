@@ -56,6 +56,7 @@ class _AddNotice extends State<AddNotice> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Notice Add'),
+        centerTitle:true,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -82,7 +83,7 @@ class _AddNotice extends State<AddNotice> {
               decoration: InputDecoration(
                 labelText: 'Notice',
               ),
-              obscureText: true,
+              //obscureText: true,
             ),
             SizedBox(height: 24.0),
             ElevatedButton(

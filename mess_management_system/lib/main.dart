@@ -7,6 +7,8 @@ import 'package:ex2app/dbhelper/mongodb.dart';
 import 'package:flutter/material.dart' ;
 import 'package:flutter/rendering.dart';
 import 'package:mongo_dart/mongo_dart.dart' as M;
+import 'package:flutter_native_splash/flutter_native_splash.dart';
+
 
 
 void main() async{
@@ -141,7 +143,6 @@ class _LoginPageState extends State<LoginPage> {
   }
 }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -187,6 +188,16 @@ class _LoginPageState extends State<LoginPage> {
                  MaterialPageRoute(builder: (context) => ProfilePage( data: nameController.text)),
                   );
                 }
+                else{
+                   // here show a msg that ur data was wrong,which show up in login page
+
+                   ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('Incorrect login data. Please try again.'),
+                      duration: Duration(seconds: 2),
+                    ),
+                   );
+                }
               },
           
               child: Text('Login'),
@@ -198,6 +209,7 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 }
+
 class RegisterPage extends StatefulWidget{
      State<RegisterPage> createState() =>_register();
 }

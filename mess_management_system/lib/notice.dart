@@ -1,5 +1,4 @@
-import 'dart:math';
-
+import 'package:ex2app/addnotice.dart';
 import 'package:ex2app/dbhelper/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:mongo_dart/mongo_dart.dart' as M;
@@ -21,30 +20,27 @@ class _NoticePageState extends State<NoticePage> {
 
   Future<void> fetchLatestRecords() async {
     try {
-      final db = M.Db(url);
+      var db, userCollection;
+      db = await M.Db.create(url);
       await db.open();
+      userCollection = db.collection(NOTICE);
 
-     // final collection = db.collection('notice');
-
-      var collection = db.collection(NOTICE);
-      var count = await collection.count();
-      var cursor = await collection.find(M.where).toList();
-      var x=5;
+      var cursor = await userCollection.find(M.where).toList();
+      var x = 5;
 
       if (cursor.isNotEmpty) {
-        final firstTenRecords = cursor.take(min(x,count)).toList();
+        var lastFiveRecords = cursor.length > x ? cursor.sublist(cursor.length - x) : cursor;
 
         setState(() {
-          data = firstTenRecords;
+          data = lastFiveRecords;
           isLoading = false;
         });
       } else {
-        print('There is no data to show !');
+        print('There is no data to show!');
         setState(() {
           isLoading = false;
         });
       }
-
     } catch (e) {
       print('Error fetching data: $e');
       // Handle error, show error message, etc.
@@ -59,35 +55,47 @@ class _NoticePageState extends State<NoticePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Latest News'),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.add),
-            onPressed: () {
-              
-            },
-          ),
-        ],
+        centerTitle: true,
       ),
       body: isLoading
           ? Center(child: CircularProgressIndicator())
-          : DataTable(
-              columns: [
-                DataColumn(label: Text('name')),
-                DataColumn(label: Text('date')),
-                DataColumn(label: Text('description')),
-                // Add more DataColumn widgets for each field in your MongoDB documents
-              ],
-              rows: data.map((record) {
-                return DataRow(
-                  cells: [
-                    DataCell(Text(record['name'].toString())),
-                    DataCell(Text(record['date'].toString())),
-                    DataCell(Text(record['description'].toString())),
-                    // Add more DataCell widgets for each field in your MongoDB documents
-                  ],
+          : ListView.builder(
+              itemCount: data.length,
+              itemBuilder: (context, index) {
+                return Card(
+                  color: Colors.pink[300],
+                  child: ListTile(
+                    title: Text(
+                      data[index]['name'].toString(),
+                      style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                    ),
+                    subtitle: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Date: ${data[index]['date']}',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        Text(
+                          'Description: ${data[index]['description']}',
+                          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                  ),
                 );
-              }).toList(),
+              },
             ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => AddNotice()),
+          );
+        },
+        child: Icon(Icons.add),
+        backgroundColor: Colors.black,
+      ),
     );
   }
 }

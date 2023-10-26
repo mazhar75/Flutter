@@ -1,22 +1,16 @@
-import 'dart:convert';
-import 'dart:developer';
-
+import 'package:flutter/material.dart';
 import 'package:ex2app/dbhelper/constant.dart';
 import 'package:ex2app/dbhelper/mongodb.dart';
+import 'package:ex2app/manager.dart';
 import 'package:ex2app/notice.dart';
-import 'package:flutter/material.dart' ;
-import 'package:flutter/rendering.dart';
-import 'package:mongo_dart/mongo_dart.dart' as M;
 
 class ProfilePage extends StatelessWidget {
-
   final String data;
 
-  // Constructor to receive the data
-    ProfilePage({required this.data});
+  ProfilePage({required this.data});
+
   @override
   Widget build(BuildContext context) {
-     
     return Scaffold(
       appBar: AppBar(
         title: Text('$data'),
@@ -24,44 +18,44 @@ class ProfilePage extends StatelessWidget {
         centerTitle: true,
       ),
       body: Container(
-        color: Color.fromARGB(255, 160, 150, 150), 
-        child:Center(
-         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Welcome to Your $data',
-              style: TextStyle(fontSize: 20),
-            ),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => MemberPage()));
-              },
-              child: Text('Member'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => ManagerPage()));
-              },
-              child: Text('Manager'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => ElectricityPage()));
-              },
-              child: Text('Electricity'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => NoticePage()));
-              },
-              child: Text('Notice Board'),
-            ),
-          ],
+        color: Color.fromARGB(255, 160, 150, 150),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'Welcome to Your $data',
+                style: TextStyle(fontSize: 20),
+              ),
+              SizedBox(height: 20),
+              GlassButton(
+                label: 'Member',
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => MemberPage()));
+                },
+              ),
+              GlassButton(
+                label: 'Manager',
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => ManagerPage()));
+                },
+              ),
+              GlassButton(
+                label: 'Electricity',
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => ElectricityPage()));
+                },
+              ),
+              GlassButton(
+                label: 'Notice Board',
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => NoticePage()));
+                },
+              ),
+            ],
+          ),
         ),
       ),
-     ),
     );
   }
 }
@@ -76,21 +70,6 @@ class MemberPage extends StatelessWidget {
       ),
       body: Center(
         child: Text('This is the Member Page'),
-      ),
-    );
-  }
-}
-
-class ManagerPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Manager Page'),
-        backgroundColor: Colors.black,
-      ),
-      body: Center(
-        child: Text('This is the Manager Page'),
       ),
     );
   }
@@ -111,3 +90,40 @@ class ElectricityPage extends StatelessWidget {
   }
 }
 
+class GlassButton extends StatelessWidget {
+  final String label;
+  final VoidCallback onPressed;
+
+  GlassButton({required this.label, required this.onPressed});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: 10),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        color: Colors.white.withOpacity(0.3),
+      ),
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          onTap: onPressed,
+          borderRadius: BorderRadius.circular(10),
+          child: Container(
+            height: 60, // Adjust the height as needed
+            padding: EdgeInsets.symmetric(horizontal: 40),
+            child: Center(
+              child: Text(
+                label,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

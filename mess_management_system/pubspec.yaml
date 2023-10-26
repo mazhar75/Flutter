@@ -31,6 +31,10 @@ dependencies:
   flutter:
     sdk: flutter
   mongo_dart: ^0.9.3
+  flutter_native_splash: ^1.2.0
+  flutter_sequence_animation: any
+ 
+  
 
 
   # The following adds the Cupertino Icons font to your application.
