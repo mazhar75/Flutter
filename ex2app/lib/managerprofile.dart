@@ -1,4 +1,6 @@
 
+import 'package:ex2app/addmember.dart';
+import 'package:ex2app/removename.dart';
 import 'package:ex2app/updatepassword.dart';
 import 'package:flutter/material.dart';
 class ManagerProfile extends StatefulWidget {
@@ -35,7 +37,12 @@ class _ManagerProfileState extends State<ManagerProfile> {
               GlassButton(
                 label: 'Add Member',
                 onPressed: () {
-                  // Handle add member action
+                   Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => AddMember(),
+                    ),
+                  );
                   print('Add Member');
                 },
               ),
@@ -43,8 +50,13 @@ class _ManagerProfileState extends State<ManagerProfile> {
               GlassButton(
                 label: 'Remove Member',
                 onPressed: () {
-                  // Handle remove member action
-                  print('Remove Member');
+                   Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => RemovePage(),
+                    ),
+                  );
+                  print('remove Member');
                 },
               ),
               SizedBox(height: 16), // Adjust the height as needed
