@@ -3,6 +3,10 @@ import 'package:ex2app/addmember.dart';
 import 'package:ex2app/removename.dart';
 import 'package:ex2app/updatepassword.dart';
 import 'package:flutter/material.dart';
+import 'package:ex2app/entertodaydata.dart';
+import 'package:ex2app/calculation.dart';
+
+
 class ManagerProfile extends StatefulWidget {
   @override
   _ManagerProfileState createState() => _ManagerProfileState();
@@ -63,8 +67,13 @@ class _ManagerProfileState extends State<ManagerProfile> {
               GlassButton(
                 label: 'Entry Today\'s Data',
                 onPressed: () {
-                  // Handle entry today's data action
-                  print('Entry Today\'s Data');
+                   Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => DataEntry(),
+                    ),
+                  );
+                  print('Data Entry');
                 },
               ),
               SizedBox(height: 16), // Adjust the height as needed
@@ -72,6 +81,12 @@ class _ManagerProfileState extends State<ManagerProfile> {
                 label: 'Calculation',
                 onPressed: () {
                   // Handle calculation action
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => CalculateResult(),
+                    ),
+                  );
                   print('Calculation');
                 },
               ),

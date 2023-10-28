@@ -4,3 +4,6 @@ const REG='RegisterInfo';
 const NOTICE = 'notice';
 const MANAGER= 'manager';
 const MEMBER= 'member';
+const MEAL='meal';
+const BAZAR='BazarCost';
+const RECIEVED='Recieved';
