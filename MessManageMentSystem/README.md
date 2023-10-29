@@ -1,6 +1,6 @@
 # ex2app
 
-A new Flutter project.
+A MessManageMent Flutter project.
 
 ## Getting Started
 
