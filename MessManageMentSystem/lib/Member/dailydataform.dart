@@ -1,17 +1,18 @@
-import 'package:ex2app/calculationshow.dart';
+import 'package:ex2app/Member/showingdailydata.dart';
 import 'package:ex2app/dbhelper/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:mongo_dart/mongo_dart.dart' as M;
   int yyear = 0;
   int mmonth = 0;
+  int dday=0;
   
 
-class CalculateResult extends StatefulWidget {
+class ShowDailyData extends StatefulWidget {
   @override
-  _CalculateResultState createState() => _CalculateResultState();
+  _ShowDailyDataState createState() => _ShowDailyDataState();
 }
 
-class _CalculateResultState extends State<CalculateResult> {
+class _ShowDailyDataState extends State<ShowDailyData> {
 
  
   @override
@@ -44,21 +45,32 @@ class _CalculateResultState extends State<CalculateResult> {
               keyboardType: TextInputType.number,
             ),
             SizedBox(height: 16.0),
+             TextField(
+              onChanged: (value) {
+                setState(() {
+                  dday = int.tryParse(value) ?? 0;
+                });
+              },
+              decoration: InputDecoration(labelText: 'Enter Date'),
+              keyboardType: TextInputType.number,
+            ),
+            SizedBox(height: 16.0),
             ElevatedButton(
               onPressed: () async {
               Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => ShowResult(
+                builder: (context) => DailyData(
                   year: yyear,
                   month: mmonth,
+                  day:dday,
                 ),
               ),
             );
 
               },
 
-              child: Text('Calculate'),
+              child: Text('Show'),
             ),
             SizedBox(height: 20.0),
            

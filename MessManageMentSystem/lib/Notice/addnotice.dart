@@ -1,6 +1,5 @@
+import 'package:ex2app/Notice/notice.dart';
 import 'package:ex2app/dbhelper/constant.dart';
-import 'package:ex2app/dbhelper/login.dart';
-import 'package:ex2app/notice.dart';
 import 'package:flutter/material.dart';
 import 'package:mongo_dart/mongo_dart.dart' as M;
 

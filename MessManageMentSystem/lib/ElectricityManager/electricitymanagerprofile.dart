@@ -1,18 +1,17 @@
 
-import 'package:ex2app/addmember.dart';
-import 'package:ex2app/removename.dart';
-import 'package:ex2app/updatepassword.dart';
+
+import 'package:ex2app/ElectricityManager/billpayentry.dart';
+import 'package:ex2app/ElectricityManager/electricitypassupdate.dart';
 import 'package:flutter/material.dart';
-import 'package:ex2app/entertodaydata.dart';
-import 'package:ex2app/calculation.dart';
 
 
-class ManagerProfile extends StatefulWidget {
+
+class EManagerProfile extends StatefulWidget {
   @override
-  _ManagerProfileState createState() => _ManagerProfileState();
+  _EManagerProfileState createState() => _EManagerProfileState();
 }
 
-class _ManagerProfileState extends State<ManagerProfile> {
+class _EManagerProfileState extends State<EManagerProfile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +30,7 @@ class _ManagerProfileState extends State<ManagerProfile> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => UpdatePasswordPage(),
+                      builder: (context) =>EUpdatePasswordPage(),
                     ),
                   );
                   print('Update Password');
@@ -44,52 +43,13 @@ class _ManagerProfileState extends State<ManagerProfile> {
                    Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => AddMember(),
+                      builder: (context) => NameListScreen(),
                     ),
                   );
                   print('Add Member');
                 },
               ),
-              SizedBox(height: 16), // Adjust the height as needed
-              GlassButton(
-                label: 'Remove Member',
-                onPressed: () {
-                   Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => RemovePage(),
-                    ),
-                  );
-                  print('remove Member');
-                },
-              ),
-              SizedBox(height: 16), // Adjust the height as needed
-              GlassButton(
-                label: 'Entry Today\'s Data',
-                onPressed: () {
-                   Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => DataEntry(),
-                    ),
-                  );
-                  print('Data Entry');
-                },
-              ),
-              SizedBox(height: 16), // Adjust the height as needed
-              GlassButton(
-                label: 'Calculation',
-                onPressed: () {
-                  // Handle calculation action
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => CalculateResult(),
-                    ),
-                  );
-                  print('Calculation');
-                },
-              ),
+              
             ],
           ),
         ),

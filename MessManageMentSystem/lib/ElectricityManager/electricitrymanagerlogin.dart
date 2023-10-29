@@ -1,14 +1,16 @@
+
+import 'package:ex2app/ElectricityManager/electricitymanagerprofile.dart';
 import 'package:flutter/material.dart';
 import 'package:mongo_dart/mongo_dart.dart' as M;
 import 'package:ex2app/dbhelper/constant.dart';
-import 'package:ex2app/managerprofile.dart';
 
-class ManagerPage extends StatefulWidget {
+
+class ElectricityManagerPage extends StatefulWidget {
   @override
-  _ManagerPageState createState() => _ManagerPageState();
+  _ElectricityManagerPageState createState() => _ElectricityManagerPageState();
 }
 
-class _ManagerPageState extends State<ManagerPage> {
+class _ElectricityManagerPageState extends State<ElectricityManagerPage > {
   final TextEditingController passwordController = TextEditingController();
   String matchResult = '';
 
@@ -18,7 +20,7 @@ class _ManagerPageState extends State<ManagerPage> {
     var db, userCollection;
     db = await M.Db.create(url);
     await db.open();
-    userCollection = db.collection(MANAGER);
+    userCollection = db.collection(EMANAGER);
 
     final document = await userCollection.findOne(M.where.eq('password', password));
 
@@ -67,7 +69,7 @@ class _ManagerPageState extends State<ManagerPage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => ManagerProfile(),
+                      builder: (context) => EManagerProfile(),
                     ),
                   );
                 } else {

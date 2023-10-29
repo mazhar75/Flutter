@@ -1,4 +1,4 @@
-import 'package:ex2app/addnotice.dart';
+import 'package:ex2app/Notice/addnotice.dart';
 import 'package:ex2app/dbhelper/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:mongo_dart/mongo_dart.dart' as M;

@@ -1,41 +1,31 @@
+import 'package:ex2app/Manager/managerprofile.dart';
 import 'package:flutter/material.dart';
 import 'package:mongo_dart/mongo_dart.dart' as M;
 import 'package:ex2app/dbhelper/constant.dart';
-import 'package:ex2app/managerprofile.dart';
 
-class UpdatePasswordPage extends StatefulWidget {
+
+class ManagerPage extends StatefulWidget {
   @override
-  _UpdatePasswordPageState createState() => _UpdatePasswordPageState();
+  _ManagerPageState createState() => _ManagerPageState();
 }
 
-class _UpdatePasswordPageState extends State<UpdatePasswordPage > {
-  final TextEditingController oldpasswordController = TextEditingController();
-  final TextEditingController newpasswordController = TextEditingController();
+class _ManagerPageState extends State<ManagerPage> {
+  final TextEditingController passwordController = TextEditingController();
   String matchResult = '';
 
   Future<bool> matchData() async {
-    final String oldpassword = oldpasswordController.text;
-     final String newpassword = newpasswordController.text;
+    final String password = passwordController.text;
 
     var db, userCollection;
     db = await M.Db.create(url);
     await db.open();
     userCollection = db.collection(MANAGER);
 
-    final document = await userCollection.findOne(M.where.eq('password', oldpassword));
+    final document = await userCollection.findOne(M.where.eq('password', password));
 
     if (document != null) {
-      // Get the document ID
-      var documentId = document['_id'];
-
-      // Use the update method to update the password
-      await userCollection.update(
-        M.where.id(documentId),
-        M.modify.set('password', newpassword),
-      );
-
       setState(() {
-        matchResult = 'Password updated successfully!';
+        matchResult = 'Data matched successfully!';
         print(matchResult);
       });
 
@@ -65,16 +55,9 @@ class _UpdatePasswordPageState extends State<UpdatePasswordPage > {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TextField(
-              controller: oldpasswordController,
+              controller: passwordController,
               decoration: InputDecoration(
-                labelText: 'Old Password',
-              )
-            ),
-            SizedBox(height: 24.0),
-            TextField(
-              controller: newpasswordController,
-              decoration: InputDecoration(
-                labelText: 'New Password',
+                labelText: 'Password',
               ),
             ),
             SizedBox(height: 24.0),
@@ -82,22 +65,22 @@ class _UpdatePasswordPageState extends State<UpdatePasswordPage > {
               onPressed: () async {
                 Future<bool> isMatched = matchData();
                 if (await isMatched == true) {
-                 ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text('Password updated.'),
-                      duration: Duration(seconds: 2),
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ManagerProfile(),
                     ),
                   );
                 } else {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
-                      content: Text('Incorrect old password. Please try again.'),
+                      content: Text('Incorrect login data. Please try again.'),
                       duration: Duration(seconds: 2),
                     ),
                   );
                 }
               },
-              child: Text('Update'),
+              child: Text('Login'),
             ),
           ],
         ),

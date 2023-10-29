@@ -2,8 +2,7 @@ import 'dart:convert';
 import 'dart:developer';
 
 import 'package:ex2app/dbhelper/constant.dart';
-import 'package:ex2app/dbhelper/login.dart';
-import 'package:ex2app/dbhelper/mongodb.dart';
+import 'package:ex2app/Main/login.dart';
 import 'package:flutter/material.dart' ;
 import 'package:flutter/rendering.dart';
 import 'package:mongo_dart/mongo_dart.dart' as M;
@@ -270,29 +269,22 @@ class _register extends State<RegisterPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            TextField(
-              controller: nameController,
-              decoration: InputDecoration(
-                labelText: 'Mess Name',
-              ),
+            Text(
+                    'This app initially Only for londoni cottege.In future it may be lounched after some update',
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal, color: Colors.black),
             ),
-            SizedBox(height: 16.0),
-            TextField(
-              controller: emailController,
-              decoration: InputDecoration(
-                labelText: 'Email',
-              ),
-              keyboardType: TextInputType.emailAddress,
+            Text(
+                    'Mess Name: Londoni Cottege',
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black),
             ),
-            SizedBox(height: 16.0),
-            TextField(
-              controller: passwordController,
-              decoration: InputDecoration(
-                labelText: 'Password',
-              ),
-              obscureText: true,
+            Text(
+                    'Gmail:test@gmail.com',
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black),
             ),
-            SizedBox(height: 24.0),
+            Text(
+                    'Password: Sorry ! This is credential information.Only mess member know',
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black),
+            ),
             ElevatedButton(
               onPressed: () async {
                 insertData();
@@ -301,7 +293,7 @@ class _register extends State<RegisterPage> {
                 MaterialPageRoute(builder: (context) => LoginPage()),
               );
               },
-              child: Text('Register'),
+              child: Text('Login Window'),
             ),
           ],
         ),

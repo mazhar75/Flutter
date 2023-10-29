@@ -33,6 +33,7 @@ dependencies:
   mongo_dart: ^0.9.3
   flutter_native_splash: ^1.2.0
   flutter_sequence_animation: any
+  glassmorphism: ^3.0.0
  
   
 
@@ -66,6 +67,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/londonicottege.jpg
+    - assets/s6.jpg
  
 
   # An image asset can refer to one or more resolution-specific "variants", see

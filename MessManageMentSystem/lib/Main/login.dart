@@ -1,8 +1,11 @@
+import 'package:ex2app/ElectricityManager/electricitrymanagerlogin.dart';
+import 'package:ex2app/Main/developer.dart';
+import 'package:ex2app/Manager/manager.dart';
+import 'package:ex2app/Member/memberlogin.dart';
+import 'package:ex2app/Notice/notice.dart';
 import 'package:flutter/material.dart';
 import 'package:ex2app/dbhelper/constant.dart';
 import 'package:ex2app/dbhelper/mongodb.dart';
-import 'package:ex2app/manager.dart';
-import 'package:ex2app/notice.dart';
 
 class ProfilePage extends StatelessWidget {
   final String data;
@@ -43,13 +46,19 @@ class ProfilePage extends StatelessWidget {
               GlassButton(
                 label: 'Electricity',
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => ElectricityPage()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => ElectricityManagerPage()));
                 },
               ),
               GlassButton(
                 label: 'Notice Board',
                 onPressed: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) => NoticePage()));
+                },
+              ),
+              GlassButton(
+                label: 'Developer',
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => DeveloperProfile()));
                 },
               ),
             ],
@@ -60,20 +69,6 @@ class ProfilePage extends StatelessWidget {
   }
 }
 
-class MemberPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Member Page'),
-        backgroundColor: Colors.black,
-      ),
-      body: Center(
-        child: Text('This is the Member Page'),
-      ),
-    );
-  }
-}
 
 class ElectricityPage extends StatelessWidget {
   @override

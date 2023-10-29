@@ -44,8 +44,8 @@ class _ShowResultState extends State<ShowResult> {
       await _fetchMeal();
       await _fetchTotalCost();
       await _fetchFinalHisab();
-      print(names);
-      print(money);
+     // print(names);
+     // print(money);
       
 
       setState(() {
