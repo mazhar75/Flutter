@@ -11,9 +11,15 @@
 ### Member View   
 1. **Deshboard**  
    ![Deshboard](images/deshboard.jpg)
-6. ****  
-   ![Register New Course](Servlet-images/7.jpg)
-7. **Registration Completed**  
-   ![Registration Completed](Servlet-images/8.jpg)
-8. **After Registration**  
-   ![After Registration](Servlet-images/9.jpg)
+2. **General Member**  
+   ![General Member](images/member_form.jpg)
+3. **Daily Data**  
+   ![Daily Data](images/memer_daily_data.jpg)
+4. **Result**  
+   ![Result](images/res_daily.jpg)
+5. **Monthly Data**  
+   ![Monthly Data](images/res_monthly.jpg)
+6. **Notice Board**  
+   ![Notice Board](images/res_monthly.jpg)
+7. **Developer**
+   ![Developer](images/devolper.jpg)  
