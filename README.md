@@ -10,15 +10,15 @@ An Android application designed to simplify and automate mess calculations using
 
 ### Common View  
 1. **Home View**  
-   ![Home View](images/home_page.jpg)  
+   <img src="images/home_page.jpg" alt="Home View" width="300"/>  
    Users can access general information and navigate through the app.  
 
 2. **Sign Up**  
-   ![Sign Up](images/reg_page.jpg)  
+   <img src="images/reg_page.jpg" alt="Sign Up" width="300"/>  
    New users can create accounts to join the system.  
 
 3. **Sign In**  
-   ![Sign In](images/sign_in_page.jpg)  
+   <img src="images/sign_in_page.jpg" alt="Sign In" width="300"/>  
    Registered users can log in securely.  
 
 ---
@@ -26,31 +26,31 @@ An Android application designed to simplify and automate mess calculations using
 ### Member View  
 
 1. **Dashboard**  
-   ![Dashboard](images/deshboard.jpg)  
+   <img src="images/deshboard.jpg" alt="Dashboard" width="300"/>  
    A personalized view for members to monitor their activities.  
 
 2. **General Member**  
-   ![General Member](images/member_form.jpg)  
+   <img src="images/member_form.jpg" alt="General Member" width="300"/>  
    Manage personal details and submit daily data.  
 
 3. **Daily Data**  
-   ![Daily Data](images/memer_daily_data.jpg)  
+   <img src="images/memer_daily_data.jpg" alt="Daily Data" width="300"/>  
    Input daily expenses and mess-related data.  
 
 4. **Result**  
-   ![Result](images/res_daily.jpg)  
+   <img src="images/res_daily.jpg" alt="Result" width="300"/>  
    View detailed calculations of daily mess expenses.  
 
 5. **Monthly Data**  
-   ![Monthly Data](images/res_monthly.jpg)  
+   <img src="images/res_monthly.jpg" alt="Monthly Data" width="300"/>  
    Analyze monthly expenditure trends.  
 
 6. **Notice Board**  
-   ![Notice Board](images/res_monthly.jpg)  
+   <img src="images/res_monthly.jpg" alt="Notice Board" width="300"/>  
    Stay updated with important announcements.  
 
 7. **Developer Information**  
-   ![Developer](images/devolper.jpg)  
+   <img src="images/devolper.jpg" alt="Developer" width="300"/>  
    View details about the developers behind the project.  
 
 ---
@@ -58,35 +58,35 @@ An Android application designed to simplify and automate mess calculations using
 ### Manager View  
 
 1. **Manager Login**  
-   ![Manager Login](images/manager_login.jpg)  
+   <img src="images/manager_login.jpg" alt="Manager Login" width="300"/>  
    Secure login for managers to access administrative features.  
 
 2. **Dashboard**  
-   ![Dashboard](images/manager_deshboard.jpg)  
+   <img src="images/manager_deshboard.jpg" alt="Dashboard" width="300"/>  
    Manage mess operations effectively.  
 
 3. **Update Password**  
-   ![Update Password](images/manager_pass_cng.jpg)  
+   <img src="images/manager_pass_cng.jpg" alt="Update Password" width="300"/>  
    Update login credentials securely.  
 
 4. **Add Members**  
-   ![Adding Member](images/manager_adding_new_member.jpg)  
+   <img src="images/manager_adding_new_member.jpg" alt="Adding Member" width="300"/>  
    Add new members to the system.  
 
 5. **Remove Members**  
-   ![Remove Members](images/manager_rem.jpg)  
+   <img src="images/manager_rem.jpg" alt="Remove Members" width="300"/>  
    Remove members no longer part of the mess.  
 
 6. **Daily Data Entry**  
-   ![Daily Data Entry](images/manager_daily_data_insert.jpg)  
+   <img src="images/manager_daily_data_insert.jpg" alt="Daily Data Entry" width="300"/>  
    Input daily data for members.  
 
 7. **Monthly Calculation Command**  
-   ![Monthly Calculation Command](images/final_calculation_from.jpg)  
+   <img src="images/final_calculation_from.jpg" alt="Monthly Calculation Command" width="300"/>  
    Automate monthly expense calculations.  
 
 8. **Monthly Calculation Result**  
-   ![Monthly Calculation Result](images/final_calculation.jpg)  
+   <img src="images/final_calculation.jpg" alt="Monthly Calculation Result" width="300"/>  
    View summarized monthly calculations.  
 
 ---
@@ -94,15 +94,15 @@ An Android application designed to simplify and automate mess calculations using
 ### Electricity Manager View  
 
 1. **Login**  
-   ![Electricity Manager Login](images/electricity_manager.jpg)  
+   <img src="images/electricity_manager.jpg" alt="Electricity Manager Login" width="300"/>  
    A dedicated interface for managing electricity-related tasks.  
 
 2. **Dashboard**  
-   ![Dashboard](images/electricity_deshboard.jpg)  
+   <img src="images/electricity_deshboard.jpg" alt="Dashboard" width="300"/>  
    Monitor and configure electricity billing.  
 
 3. **Configure Bill**  
-   ![Configure Bill](images/Esign.jpg)  
+   <img src="images/Esign.jpg" alt="Configure Bill" width="300"/>  
    Manage electricity expenses seamlessly.  
 
 ---
@@ -120,5 +120,3 @@ Contributions are welcome! Feel free to open issues or submit pull requests for 
 
 ## Contact  
 For further inquiries, feel free to reach out.  
-
----
