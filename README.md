@@ -8,6 +8,7 @@
 
 1. **Home View**  
    <img src="images/home_page.jpg" alt="Home View" width="300"/>
+   
    Users can access general information and navigate through the app
    
 3. **Sign Up**  
