@@ -8,6 +8,7 @@
 3. **Sign In**  
    ![Sign In](images/sign_in_page.jpg)
 
+
 ### Member View   
 1. **Deshboard**  
    ![Deshboard](images/deshboard.jpg)
@@ -22,7 +23,9 @@
 6. **Notice Board**  
    ![Notice Board](images/res_monthly.jpg)
 7. **Developer**
-   ![Developer](images/devolper.jpg)  
+   ![Developer](images/devolper.jpg)
+
+   
 ### Manager View
 1.**Manger Login**  
    ![Manger Login*](images/manager_login.jpg)
@@ -40,3 +43,13 @@
    ![Monthly Calculation Command](images/final_calculation_from.jpg)
 7. **Monthly Calculation Result**
    ![Monthly Calculation Result](images/final_calculation.jpg)  
+
+
+### Electricity Manager View
+1.**Login**  
+   ![Manger Login*](images/electricity_manager.jpg)
+2. **Deshboard**  
+   ![Deshboard](images/electricity_deshboard.jpg)
+3. **Configure Bill**  
+   ![Configure Bill](images/Esign.jpg)
+
